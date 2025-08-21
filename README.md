@@ -53,3 +53,111 @@ It allows users to upload PDF files and convert them into editable Word document
 ---
 
 ## Project Structure
+```
+├── converter/
+│ └── pdf_to_docx.py # Conversion logic
+├── utils/
+│ └── file_ops.py # File handling utilities (safe names, timestamp, etc.)
+├── streamlitApp.py # Main Streamlit app
+├── requirements.txt # Python dependencies
+├── demo.png demo screenshots
+├── LICENSE
+└── README.md
+
+```
+
+---
+
+## Use Cases
+
+| Use Case                  | Description |
+|----------------------------|-------------|
+| **Students**              | Convert lecture notes in PDF into editable Word for annotation. |
+| **Office Work**           | Edit reports/contracts that are only available in PDF. |
+| **Batch Processing**      | Convert multiple academic papers at once into `.docx`. |
+| **Educational Tool**      | Demonstrate PDF parsing & document processing with Python. |
+
+---
+
+## Tech Stack
+
+| Purpose            | Libraries Used |
+|--------------------|----------------|
+| **PDF Parsing**    | `pdf2docx` |
+| **Word Creation**  | `python-docx` |
+| **UI/Frontend**    | `streamlit` |
+| **Helpers**        | `hashlib`, `time`, `io`, `zipfile` |
+
+---
+
+## Installation
+
+### 1. Clone the repository:
+```bash
+git clone https://github.com/paht2005/PDF_to_Word_Converter.git
+cd PDF_to_Word_Converter
+```
+
+### 2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the app:
+```bash
+streamlit run streamlitApp.py
+```
+Open your browser at: ``http://localhost:8501``
+
+---
+
+## Feature Details
+### 1. File Upload
+- Drag and drop multiple PDF files.
+- Each file is validated for size (≤200MB).
+
+### 2. Conversion Logic
+For each PDF:
+- Parse with `pdf2docx.Converter`.
+- Create Word document using `python-docx`.
+- Save with **unique name** (`filename-<hash>-<timestamp>.docx`).
+
+### 3. Batch Mode
+- If multiple files uploaded, results are zipped automatically.
+- Users can download .zip containing all .docx outputs.
+
+--- 
+## How It Works
+```bash
+Input PDF → pdf2docx → Extract text/images → Write into .docx → Safe filename → Download
+```
+- **Single file:** Direct `.docx` download.
+- **Multiple files:** Auto-zip packaging.
+
+---
+## Known Issues
+| Issue                | Reason                             | Fix                         |
+| -------------------- | ---------------------------------- | --------------------------- |
+| **Complex layouts**  | Tables/images may not convert 100% | Manual adjustment in Word   |
+| **Large files slow** | Conversion speed depends on #pages | Show progress bar in future |
+| **Fonts mismatch**   | PDF fonts may not exist in Word    | Edit styles manually        |
+
+--- 
+## Future Enhancements
+- Add cloud storage integration (Google Drive/Dropbox).
+- Support scanned PDFs → OCR → Word with pytesseract.
+- Add progress bar in Streamlit for long files.
+- Support DOCX → PDF reverse conversion.
+---
+## LICENSE
+This project is licensed under the MIT License.
+See the [LICENSE](./LICENSE) file for details.
+
+--- 
+## Contributing
+Contributions are welcome!
+Fork, create a pull request, or open an issue .
+
+--- 
+## Contact
+Contact for work: Nguyễn Công Phát – congphatnguyen.work@gmail.com
