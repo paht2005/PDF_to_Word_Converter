@@ -4,7 +4,7 @@ It allows users to upload PDF files and convert them into editable Word document
 
 
   
-<img src="demo.png" width="200"><br/>
+<img src="demo.png"><br/>
 <i>Sample </i>
 
 ---
