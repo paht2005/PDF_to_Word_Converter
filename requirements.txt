@@ -3,3 +3,4 @@ uvicorn
 pdf2docx
 python-docx
 pymupdf
+streamlit

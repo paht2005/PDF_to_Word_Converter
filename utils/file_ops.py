@@ -1,12 +1,15 @@
-import os, hashlib
+import os
+import hashlib
+import time
 
-def safe_basename(name: str, default="file") -> str:
-    name = (name or "").strip().replace("\\", "/").split("/")[-1]
-    allowed = "-_.() abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    cleaned = "".join(c for c in name if c in allowed)
-    return cleaned or default
+def safe_basename(filename: str) -> str:
+    return os.path.basename(filename)
 
-def stem_with_hash(name: str, data: bytes, suffix: str) -> str:
-    base = os.path.splitext(safe_basename(name))[0]
-    h = hashlib.sha1(data).hexdigest()[:8]
-    return f"{base}-{h}{suffix}"
+def stem_with_hash(filename: str, data: bytes, suffix: str) -> str:
+    stem, _ = os.path.splitext(safe_basename(filename))
+    h = hashlib.md5(data).hexdigest()[:8]
+    return f"{stem}-{h}{suffix}"
+
+def timestamp() -> str:
+    """Return a safe timestamp string for filenames."""
+    return time.strftime("%Y%m%d-%H%M%S")
