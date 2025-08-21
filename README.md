@@ -2,11 +2,10 @@
 PDF → Word Converter is a simple yet powerful web application built with **Streamlit**.  
 It allows users to upload PDF files and convert them into editable Word documents (.docx) directly in the browser.
 
-<p align="left">
+
   
-  <img src="demo.png" width="200"><br/>
-  <i>Sample </i>
-</p>
+<img src="demo.png" width="200"><br/>
+<i>Sample </i>
 
 ---
 
