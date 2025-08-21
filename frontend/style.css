@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 40px;
+}
+form {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  border-radius: 8px;
+}
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0059c1;
+}
+#status {
+  margin-top: 15px;
+  font-weight: bold;
+}

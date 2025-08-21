@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pdf2docx
+python-docx
+pymupdf

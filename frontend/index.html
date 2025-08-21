@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF → Word Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1> PDF → Word Converter</h1>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" multiple accept="application/pdf" required>
+    <select id="strategy">
+      <option value="auto">Auto</option>
+      <option value="precise">Precise</option>
+      <option value="text">Text</option>
+    </select>
+    <button type="submit">Convert</button>
+  </form>
+  <div id="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
